@@ -1,3 +1,6 @@
 [submodule "GCLoader/libs/plog"]
 	path = GCLoader/libs/plog
 	url = https://github.com/SergiusTheBest/plog
+[submodule "GCLoader/libs/minhook"]
+	path = GCLoader/libs/minhook
+	url = https://github.com/TsudaKageyu/minhook.git

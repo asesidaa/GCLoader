@@ -76,7 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <TargetName>iDmacDrv32</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include;libs/minhook/include</IncludePath>
     <PublicIncludeDirectories></PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -86,7 +86,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>iDmacDrv32.dll</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include;libs/minhook/include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -169,39 +169,26 @@
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="iDmacDrv32.cpp" />
+    <ClCompile Include="libs\minhook\src\buffer.c" />
+    <ClCompile Include="libs\minhook\src\hde\hde32.c" />
+    <ClCompile Include="libs\minhook\src\hde\hde64.c" />
+    <ClCompile Include="libs\minhook\src\hook.c" />
+    <ClCompile Include="libs\minhook\src\trampoline.c" />
+    <ClCompile Include="RfidEmu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libs\plog\include\plog\Appenders\AndroidAppender.h" />
-    <ClInclude Include="libs\plog\include\plog\Appenders\ColorConsoleAppender.h" />
-    <ClInclude Include="libs\plog\include\plog\Appenders\ConsoleAppender.h" />
-    <ClInclude Include="libs\plog\include\plog\Appenders\DebugOutputAppender.h" />
-    <ClInclude Include="libs\plog\include\plog\Appenders\DynamicAppender.h" />
-    <ClInclude Include="libs\plog\include\plog\Appenders\EventLogAppender.h" />
-    <ClInclude Include="libs\plog\include\plog\Appenders\IAppender.h" />
-    <ClInclude Include="libs\plog\include\plog\Appenders\RollingFileAppender.h" />
-    <ClInclude Include="libs\plog\include\plog\Converters\NativeEOLConverter.h" />
-    <ClInclude Include="libs\plog\include\plog\Converters\UTF8Converter.h" />
-    <ClInclude Include="libs\plog\include\plog\Formatters\CsvFormatter.h" />
-    <ClInclude Include="libs\plog\include\plog\Formatters\FuncMessageFormatter.h" />
-    <ClInclude Include="libs\plog\include\plog\Formatters\MessageOnlyFormatter.h" />
-    <ClInclude Include="libs\plog\include\plog\Formatters\TxtFormatter.h" />
-    <ClInclude Include="libs\plog\include\plog\Helpers\AscDump.h" />
-    <ClInclude Include="libs\plog\include\plog\Helpers\HexDump.h" />
-    <ClInclude Include="libs\plog\include\plog\Helpers\PrintVar.h" />
-    <ClInclude Include="libs\plog\include\plog\Init.h" />
-    <ClInclude Include="libs\plog\include\plog\Initializers\ConsoleInitializer.h" />
-    <ClInclude Include="libs\plog\include\plog\Initializers\RollingFileInitializer.h" />
-    <ClInclude Include="libs\plog\include\plog\Log.h" />
-    <ClInclude Include="libs\plog\include\plog\Logger.h" />
-    <ClInclude Include="libs\plog\include\plog\Record.h" />
-    <ClInclude Include="libs\plog\include\plog\Severity.h" />
-    <ClInclude Include="libs\plog\include\plog\Util.h" />
-    <ClInclude Include="libs\plog\include\plog\WinApi.h" />
+    <ClInclude Include="libs\minhook\src\buffer.h" />
+    <ClInclude Include="libs\minhook\src\hde\hde32.h" />
+    <ClInclude Include="libs\minhook\src\hde\hde64.h" />
+    <ClInclude Include="libs\minhook\src\hde\pstdint.h" />
+    <ClInclude Include="libs\minhook\src\hde\table32.h" />
+    <ClInclude Include="libs\minhook\src\hde\table64.h" />
+    <ClInclude Include="libs\minhook\src\trampoline.h" />
     <ClInclude Include="RegisterOpTypes.h" />
+    <ClInclude Include="RfidEmu.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="iDmacDrv32.def" />
-    <Content Include="libs\plog\.git" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -24,6 +24,10 @@ enum class RegisterReadType {
     FIO_GC_UNKNOWN_2 = 0x41D4,
     FIO_GC_UNKNOWN_3 = 0x41D8,
     FIO_GC_UNKNOWN_4 = 0x41DC,
+    FIO_GC_UNKNOWN_5 = 0x4148,
+    FIO_GC_UNKNOWN_6 = 0x414C,
+    FIO_GC_UNKNOWN_7 = 0x41C8,
+    FIO_GC_UNKNOWN_8 = 0x41CC,
 };
 
 enum class RegisterWriteType {
