@@ -3,6 +3,7 @@
 #include "plog/Log.h"
 #include "plog/Initializers/RollingFileInitializer.h"
 #include <format>
+#include "InputManager.h"
 
 extern "C" __declspec(dllexport) DWORD __cdecl iDmacDrvOpen(int deviceId, LPVOID outBuffer, LPVOID lpSomeFlag) {
     PLOG_VERBOSE << "iDmacDrvOpen" << std::endl;
@@ -43,7 +44,7 @@ extern "C" __declspec(dllexport) int __cdecl iDmacDrvRegisterRead(int DeviceId, 
         result = 0x00FF0000;
         break;
     case RegisterReadType::FIO_NODE_0_INPUT:
-        result = 0;
+        result = manager.GetInput();
         break;
     case RegisterReadType::FIO_NODE0_ANALOG1:
         result = 0;

@@ -4,3 +4,6 @@
 [submodule "GCLoader/libs/minhook"]
 	path = GCLoader/libs/minhook
 	url = https://github.com/TsudaKageyu/minhook.git
+[submodule "GCLoader/libs/configor"]
+	path = GCLoader/libs/configor
+	url = https://github.com/Nomango/configor

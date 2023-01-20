@@ -130,7 +130,7 @@ public:
 			return;
 		}
 
-		DWORD sizeK = 0;
+		BYTE sizeK = 0;
 		for (DWORD i = sizeaddr; i<xpos; i++)
 			if (buffer[i] != 0xD0)
 				++sizeK;
@@ -138,13 +138,13 @@ public:
 		buffer[sizeaddr] = sizeK;
 
 		// calculate the checksum
-		DWORD sum = 0;
+		BYTE sum = 0;
 		for (DWORD i = sumaddr, inc = 0; i<xpos; i++) {
 			if (buffer[i] == 0xD0) {
 				inc = 1;
 			}
 			else {
-				sum += (DWORD)((buffer[i] + inc) & 0xFF);
+				sum += (buffer[i] + inc) & 0xFF;
 				if (inc)
 					inc = 0;
 			}

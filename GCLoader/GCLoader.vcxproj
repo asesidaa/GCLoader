@@ -76,7 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <TargetName>iDmacDrv32</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include;libs/minhook/include</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include;libs/minhook/include;</IncludePath>
     <PublicIncludeDirectories></PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -86,7 +86,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>iDmacDrv32.dll</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include;libs/minhook/include</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include;libs/minhook/include;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -169,14 +169,31 @@
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="iDmacDrv32.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="libs\minhook\src\buffer.c" />
     <ClCompile Include="libs\minhook\src\hde\hde32.c" />
     <ClCompile Include="libs\minhook\src\hde\hde64.c" />
     <ClCompile Include="libs\minhook\src\hook.c" />
     <ClCompile Include="libs\minhook\src\trampoline.c" />
     <ClCompile Include="RfidEmu.cpp" />
+    <ClCompile Include="Settings.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="keycodes.h" />
+    <ClInclude Include="libs\configor\include\configor\configor.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_conversion.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_declare.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_encoding.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_exception.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_iterator.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_parser.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_serializer.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_stream.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_token.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_value.hpp" />
+    <ClInclude Include="libs\configor\include\configor\configor_wrapper.hpp" />
+    <ClInclude Include="libs\configor\include\configor\json.hpp" />
     <ClInclude Include="libs\minhook\src\buffer.h" />
     <ClInclude Include="libs\minhook\src\hde\hde32.h" />
     <ClInclude Include="libs\minhook\src\hde\hde64.h" />
@@ -186,6 +203,7 @@
     <ClInclude Include="libs\minhook\src\trampoline.h" />
     <ClInclude Include="RegisterOpTypes.h" />
     <ClInclude Include="RfidEmu.h" />
+    <ClInclude Include="Settings.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="iDmacDrv32.def" />
