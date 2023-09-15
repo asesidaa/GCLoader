@@ -20,6 +20,16 @@ struct Settings {
     int p1Button1Keycode = VK_KEY_Q;
     int p2Button1Keycode = VK_CONTROL;
 
+    std::string inputMode = "keyboard";
+
+    int joyIndex = 0;
+    int UpButtonCode = 1;
+    int DownButtonCode = 4;
+    int LeftButtonCode = 8;
+    int RightButtonCode = 2;
+    int Button1Code = 16;
+    int Button2Code = 32;
+
     CONFIGOR_BIND(configor::json::value, Settings,
         REQUIRED(testModeKeycode),
         REQUIRED( p1UpKeycode),
@@ -31,7 +41,15 @@ struct Settings {
         REQUIRED( p1RightKeycode),
         REQUIRED( p2RightKeycode),
         REQUIRED( p1Button1Keycode),
-        REQUIRED( p2Button1Keycode)
+        REQUIRED( p2Button1Keycode),
+        REQUIRED(inputMode),
+        REQUIRED(joyIndex),
+        REQUIRED(UpButtonCode),
+        REQUIRED(DownButtonCode),
+        REQUIRED(LeftButtonCode),
+        REQUIRED(RightButtonCode),
+        REQUIRED(Button1Code),
+        REQUIRED(Button2Code)
         )
 };
 

@@ -13,8 +13,9 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-#ifdef _DEBUG
         {
+#ifdef _DEBUG
+        
             plog::init(plog::debug, "loader-log.txt");
 #else
             plog::init(plog::info, "loader-log.txt");

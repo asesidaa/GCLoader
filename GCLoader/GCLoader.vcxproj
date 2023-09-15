@@ -85,7 +85,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>iDmacDrv32.dll</TargetName>
+    <TargetName>iDmacDrv32</TargetName>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);libs/plog/include;libs/minhook/include;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
